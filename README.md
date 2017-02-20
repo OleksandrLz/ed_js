@@ -1,2 +1,2 @@
 # ed_js
-test educational repository
+educational JS repository
