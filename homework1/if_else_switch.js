@@ -28,6 +28,16 @@
 //var test = true;
 //test ? alert('верно') : alert('неверно');
 
+/* LILY:
+var test = true ? alert('верно') : alert('неверно');
+
+// должно быть на так как више а вот так должно быть:
+
+var test = true;
+
+test ? alert('верно') : alert('неверно');
+*/
+
 //4 задание
 //var a = 2;
 //var b = 5;
