@@ -41,7 +41,24 @@ while (n > 50){
 }
 alert(n);
 alert(num);
+/*
+LILY:
 
+Тут правильней было бы использовать цыкл while - do потому что если n = 50 оно ни разу не делает исчисление соответственно 
+работает не совсем правильно
+
+если бы было бы вот так:
+while (n > 50) 
+do
+{
+	num++;
+	n = n / 2;
+}
+
+тогда оно хоть один раз но посчитает значение)
+
+или просто поставить while (n >= 50)
+*/
 //6 задание
 
 var arr = [2, 5, 9, 15, 0, 4];
@@ -55,6 +72,7 @@ for (var i = 0; i < arr.length; i++){
 
 var arr = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
 var month = 1;
+
 for(var i = 0; i > arr.length; i++){
 	if (i == month)	{
 		document.write('<b>'+arr[i]+'</b><br>');
