@@ -25,7 +25,8 @@
 //	alert('неверно');
 //}
 //
-//var test = true ? alert('верно') : alert('неверно');
+//var test = true;
+//test ? alert('верно') : alert('неверно');
 
 //4 задание
 //var a = 2;
@@ -68,6 +69,7 @@
 
 //8 задание
 //var num = 1;
+//var result = '';
 //switch (num) {
 //	case 1:
 //		result = 'зима';
