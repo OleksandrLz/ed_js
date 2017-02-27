@@ -27,8 +27,8 @@ var i = '1';
 var j = 8;
 var m = 7;
 
-(m - j) == j;
-(m - j) === j;
+(m - j) == j; // false
+(m - j) === j; // false
 
 (m - 6) && j && console.log('Hi'); // console.log('Hi')
 ```
