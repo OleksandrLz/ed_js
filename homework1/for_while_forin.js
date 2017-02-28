@@ -35,7 +35,7 @@ for (var key in obj){
 
 var n = 1000;
 var num = 0;
-while (n > 50){
+while (n >= 50){
 	num++;
 	n = n / 2;
 }
