@@ -18,7 +18,7 @@ for(var i = 1; i <= 100; i++){
 	}
 }
 
-//3 task
+//3 task ???
 var gcd = function(a, b) {
     if ( ! b) {
         return a;
