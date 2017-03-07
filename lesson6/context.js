@@ -1,5 +1,6 @@
 //Опеределить на какой контекст будет ссылатся this в результате выполнений следующих примеров
-//1 task
+
+ 
 function isContextEqualTo(contextLink) {
    console.log(contextLink === this);
 }
@@ -11,16 +12,20 @@ function name() {
 var name = "Vasya";
 
 var user = {
-    name: "Lylya",
     getName: function () {
-        return this.name;
+        isContextEqualTo(window); //?? ссылаеться на глобальный объект window === this (user)
+        isContextEqualTo(user); //?? ссылаеться на объект user 
     }
 }
 
-console.log(user.getName()); // Lylya, ссылаеться на объект user
+console.log(user.getName()); // true, false
 
 var getName = user.getName;
 
-console.log(getName()); // Vasya, ссылаеться на глобальный объект "window"
+console.log(getName()); // true, false
 
-//2 task
+user.getName = name;
+
+console.log(user.getName()); // error
+
+user.getName.call(window); // error
