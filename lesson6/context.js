@@ -13,16 +13,16 @@ var name = "Vasya";
 
 var user = {
     getName: function () {
-        isContextEqualTo(window); //?? ссылаеться на глобальный объект window === this (user)
-        isContextEqualTo(user); //?? ссылаеться на объект user 
+        isContextEqualTo(window); //?? ссылаеться на объект user, window === user 
+        isContextEqualTo(user); //?? ссылаеться на объект user, user === user 
     }
 }
 
-console.log(user.getName()); // true, false
+console.log(user.getName()); // false, true  ,ссылаеться на объект user
 
 var getName = user.getName;
 
-console.log(getName()); // true, false
+console.log(getName()); // ссылаеться на глобальный объект
 
 user.getName = name;
 
