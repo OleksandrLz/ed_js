@@ -13,12 +13,12 @@ var name = "Vasya";
 
 var user = {
     getName: function () {
-        isContextEqualTo(window); //?? ссылаеться на объект user, window === user 
-        isContextEqualTo(user); //?? ссылаеться на объект user, user === user 
+        isContextEqualTo(window); // ссылаеться на объект user
+        isContextEqualTo(user); // ссылаеться на объект user, 
     }
 }
 
-console.log(user.getName()); // false, true  ,ссылаеться на объект user
+console.log(user.getName()); // ссылаеться на объект user
 
 var getName = user.getName;
 
