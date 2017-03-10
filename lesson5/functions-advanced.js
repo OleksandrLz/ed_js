@@ -50,10 +50,14 @@ function cantDel(){}
  cantDel.prototype.cantDelete = 1;
 obj = new cantDel();
 
-//3 ???
+//3
 obj.getDouble = function() { 
 	};
 
+Object.defineProperty(obj, 'getDouble', {
+	get: function(number) { return number / 3 ; },
+	set: function(number) { return number * 2 ; },
+});
 // 5 task
 Напишите код, который отсортирует массив объектов people по полю age.
 
@@ -91,7 +95,3 @@ function unique(arr) {
 
   return result;
 }
-
-
-
-
