@@ -78,4 +78,22 @@ function factorial(number){
 factorial(3);
 
 // 8 task
-5-10 min
+
+var start = new Date();
+function factorial(number){
+	if (number == 1){
+	return 1;
+	} 
+	var result = number;
+	for (var i = 1; i < number; i++){
+		result *= i;
+	}
+	if (result % 2 === 0){
+		return result*2;
+} else return result;
+
+}
+console.log(factorial(12));
+var end = new Date();
+var elapsed = end.getTime() - start.getTime();
+console.log('время выполнения - '+elapsed+' миллисекунд');
