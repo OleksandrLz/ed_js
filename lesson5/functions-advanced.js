@@ -46,6 +46,11 @@ var obj = {
 }
 Object.defineProperty(obj, "number", {enumerable: false});
 //2
+/**
+тут что то совсем не то получаеться:
+
+нужно это свойство тоже создать через Object.defineProperty просто там нужно правильный параметр в аргументы передать 
+*/
 function cantDel(){}
  cantDel.prototype.cantDelete = 1;
 obj = new cantDel();
