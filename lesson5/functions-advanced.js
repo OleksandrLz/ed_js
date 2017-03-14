@@ -46,10 +46,7 @@ var obj = {
 }
 Object.defineProperty(obj, "number", {enumerable: false});
 //2
-function cantDel(){}
- cantDel.prototype.cantDelete = 1;
-obj = new cantDel();
-
+Object.defineProperty(obj, "cantDelete", {configurable: false});
 //3
 obj.getDouble = function() { 
 	};
