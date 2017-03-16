@@ -11,8 +11,7 @@ function Person(name, last_name, age) {
 	this.isCanWalk = function() {
     return true;	
   };
- 	this.countPersons = ++Person.count;
-	
+ 	this.countPersons = ++Person.count;	
 }
 Person.count = 0;
 var Alex = new Person('Alex', 'Ivanov', 25);
@@ -20,16 +19,6 @@ var Nick = new Person('Nick', 'Lebowsky', 26);
 var Iren = new Person('Iren', 'Qwerty', 24);
 
 console.log(Iren.countPersons);
-
-//для 'статический метод'
-function createCounter() {
-	var numberOfCalls = 0;
-	return function() {
-			return ++numberOfCalls;
-		   }
-}
-this.countPerson = createCounter();
-
 
 // 2 task
 Создайте обьект bus через функцию-констурктор Car который будет иметь свойства canRide, wheels && model;
