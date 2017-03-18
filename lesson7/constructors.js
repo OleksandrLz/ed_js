@@ -11,19 +11,21 @@ function Person(name, last_name, age) {
 	this.isCanWalk = function() {
     return true;	
   };
- 	this.countPersons = ++Person.count;	
+ 	Person.count++;	
 }
 Person.count = 0;
+Person.countPersons = function() {
+      alert( this.count ); 
+    };
 var Alex = new Person('Alex', 'Ivanov', 25);
 var Nick = new Person('Nick', 'Lebowsky', 26);
 var Iren = new Person('Iren', 'Qwerty', 24);
 
-console.log(Iren.countPersons);
+Person.countPersons();
 
 // 2 task
 Создайте обьект bus через функцию-констурктор Car который будет иметь свойства canRide, wheels && model;
 В нем переопределите метод toString() который будет при его вызове выводить:
-
 "Это объект bus! Он может ехать? 'тут значение свойства canRide' 
 У него 'тут значение свойства wheels' колеса и у него модель 'тут значение cвойства model'";
 
