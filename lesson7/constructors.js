@@ -35,13 +35,12 @@ function Car(name, canRide, wheels, model){
 	this.name = name;
 	this.canRide = canRide;
 	this.wheels = wheels;
-	this.model = model;	
-	this.__proto__.toString = function(){
-		var str = 'Это объект '+this.name+'! '+'Он может ехать? '+this.canRide+' У него '+this.wheels+' колеса и у него модель ' +this.model;
-		return str;
-	};
+	this.model = model;
 }
-
+Car.prototype.toString = function(){
+	var str = 'Это объект '+this.name+'! '+'Он может ехать? '+this.canRide+' У него '+this.wheels+' колеса и у него модель ' +this.model;
+	return str;
+};
 var bus = new Car('bus', 'Yes', 4, 'Bogdan');
 var taxi = new Car('taxi', 'Yes', 4, 'Audi');
 console.log(bus.toString());
