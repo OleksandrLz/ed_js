@@ -20,6 +20,17 @@ var Iren = new Person('Iren', 'Qwerty', 24);
 
 console.log(Iren.countPersons);
 
+/** смотри еще раз по поводу countPersons нужно создавать его не в каждом экзепляре а извне тоесть  */
+
+Person.countPersons = 0;
+
+/** а внутри конструктора потом уже пишешь */
+
+function Person(name, last_name, age) {
+	// твой код
+ 	Person.countPersons++;	
+}
+
 // 2 task
 Создайте обьект bus через функцию-констурктор Car который будет иметь свойства canRide, wheels && model;
 В нем переопределите метод toString() который будет при его вызове выводить:
@@ -40,6 +51,21 @@ function Car(name, canRide, wheels, model){
 	};
 }
 
+/**  метод toString лучше создавать внутри прототипа констркуктора Car тоесть: 
+
+Car.prototype.toString = function(){
+	var str = 'Это объект '+this.name+'! '+'Он может ехать? '+this.canRide+' У него '+this.wheels+' колеса и у него модель ' +this.model;
+	return str;
+};
+
+через __proto__ так никто не делает, делают через prototype потому что по умолчанию Car берет метод toString 
+у Object тоесть 
+
+Car.prototype.toString === Object.prototype.toString
+
+и таким образом как я написала више мы просто его перезаписываем 
+
+*/
 var bus = new Car('bus', 'Yes', 4, 'Bogdan');
 var taxi = new Car('taxi', 'Yes', 4, 'Audi');
 console.log(bus.toString());
