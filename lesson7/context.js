@@ -10,13 +10,16 @@ function Person(name, age) {
 
     this.getName = function () {
        isContextEqualTo(window); // в контексте window
+       /** тут будет контект объекта */
        isContextEqualTo(user); // в контексте window
+       /** и тут будет контект объекта */
        return this.name;
     };
 }
 
 Person.prototype.getAge = function () {
     isContextEqualTo(window); // в контексте window
+    /** тут будет контект объекта */
     return this.age;
 };
 
@@ -30,6 +33,7 @@ console.log(getName()); //  в контексте window
 console.log(user.getName()); //  в контексте user
 
 Person.prototype.getAge = function() {
+    /** тут будет контект объекта */
     isContextEqualTo(user); //  в контексте window
     return this.name;
 }
