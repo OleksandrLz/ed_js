@@ -9,14 +9,14 @@ function Person(name, age) {
     this.age = age;
 
     this.getName = function () {
-       isContextEqualTo(window); // в контексте window
-       isContextEqualTo(user); // в контексте window
+       isContextEqualTo(window); // в контексте обьекта
+       isContextEqualTo(user); // в контексте обьекта
        return this.name;
     };
 }
 
 Person.prototype.getAge = function () {
-    isContextEqualTo(window); // в контексте window
+    isContextEqualTo(window); // в контексте обьекта
     return this.age;
 };
 
@@ -30,7 +30,7 @@ console.log(getName()); //  в контексте window
 console.log(user.getName()); //  в контексте user
 
 Person.prototype.getAge = function() {
-    isContextEqualTo(user); //  в контексте window
+    isContextEqualTo(user); //  в контексте обьекта
     return this.name;
 }
 
