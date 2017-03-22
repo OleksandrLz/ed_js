@@ -4,19 +4,15 @@
 Создайте код, который выводит все простые числа из интервала от 2 до 10. Результат должен быть: 2,3,5,7.
 P.S. Код также должен легко модифицироваться для любых других интервалов.
 
-var minNumber = 2;
-var maxNumber = 10;
+var minNumber = 20;
+var maxNumber = 100;
 var arr = [];
 
-for (var i = minNumber; i <= maxNumber; i++){
-	for (var j = minNumber; j <= i; j++){
-		if (i%j == 0){	
-		  break;
-		}
+for (var i = minNumber; i < maxNumber; i++){
+	for (var j = 2; j < i; j++){
+		if (i%j === 0) break;
+	  if(i==j+1) arr.push(i);
 	}
-	  if(j==i){ 
-	  arr.push(i);
-	  }
 }
 console.log(arr);
 
@@ -24,22 +20,18 @@ console.log(arr);
 Создайте функцию addClass(obj, cls), которая добавляет в список класс cls, но только если его там еще нет
 
 var obj = {
-  className: 'open menu'
+  className: 'menu open'
 };
 function addClass(obj, cls){
 	var arr = obj.className.split(' ');
-
-	for (var i = 0; i < arr.length; i++) {
-  		if (arr[i] == cls) return;
-	}
-	arr.push(cls);
+  if (arr.indexOf(cls) == -1) arr.push(cls);
 	obj.className = arr.join(' ');	
 }
 addClass(obj, 'new'); // obj.className='open menu new'
 addClass(obj, 'open'); // без изменений (класс уже существует)
 addClass(obj, 'me'); // obj.className='open menu new me'
 
-alert( obj.className );
+console.log(obj);
 
 //3 task
 Напишите функцию removeClass(obj, cls), которая удаляет класс cls, если он есть
@@ -50,14 +42,16 @@ var obj = {
 
 function removeClass(obj, cls){
 	var arr = obj.className.split(' ');
+	var result;
 	for (var i = 0; i < arr.length; i++) {
-		if (arr[i] == cls){
-			arr.splice(i, 1);
-			i--;
-		}		
+	if (arr.indexOf(cls) !== -1) {
+		arr.splice(arr.indexOf(cls), 1);
+		i--;
+		}
 	}
 	obj.className = arr.join(' ');
 }
+
 obj = {
   className: 'my menu menu'
 };
@@ -73,9 +67,9 @@ alert( obj.className ); // 'my'
 
 var arr = [];
 while(true){
-	var number = +prompt('Введите число');
-	if (number === '' || number === null || isNaN(number)) break;
-	arr.push(number);
+	var number = prompt('Введите число');
+	if (number === " " || number === null || isNaN(number)) break;
+	arr.push(+number);
 }
 	var result = 0;
 	for (var i = 0; i < arr.length; i++){
@@ -96,7 +90,7 @@ alert( result );
 Напишите функцию fib(n), которая возвращает n-е число Фибоначчи.
 
 function fib(n) {
-  var a = 1,
+  var a = 1;
   var b = 1;
   for (var i = 3; i <= n; i++) {
     var c = a + b;
@@ -139,5 +133,4 @@ for (var name in tasksCompleted) {
   }
 }
 alert( maxName );
-
 
