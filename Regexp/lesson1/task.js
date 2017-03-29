@@ -34,7 +34,7 @@ console.log(reg.test(str2));//false
 //Write a JavaScript program to search a date within a string.
  
 function testForDate(str){
-   var reg = /\d+\/\d+\/\d+/g;
+  var reg = /\d{2}\/\d{2}\/\d{4}/g;
   var result = str.match(reg);
   console.log(result);
  }
