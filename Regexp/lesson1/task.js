@@ -11,18 +11,17 @@ console.log(str.replace(/@.*?@/g, "@   @"));
 var date = "31/12/2025";
 console.log(date.replace(/\//g, ' - ')); // 31 - 12 - 2025
 
-// task 3 ?
+// task 3
+Напишите регулярное выражение которое для каждой картинки добавит закрывающий слеш в конце:
 
-// task 4 ?
-function testNum(phoneNum){
-      if(phoneNum.length > 8 ){
-	  	return phoneNum.replace(/\D/g, '');
-      } alert('Enter correct phone number');
-}
-var number = prompt('Enter phone number');
-alert(testNum(number));
+var text = '<img src="a">   <img src="b" id="c">';
+text = text.replace(/>/g, '\/>');
 
-//task 5
+// now text = '<img src="a"/>   <img src="b" id="c"/>'
+alert(text);
+
+
+//task 4
 //Write a pattern that matches e-mail addresses.
 
 var reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -31,7 +30,7 @@ var str2 = 'aleksandr12..3@ua.net';
 console.log(reg.test(str1));//true
 console.log(reg.test(str2));//false
 
-// task 6
+// task 5
 //Write a JavaScript program to search a date within a string.
  
 function testForDate(str){
