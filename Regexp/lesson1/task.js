@@ -15,7 +15,7 @@ console.log(date.replace(/\//g, ' - ')); // 31 - 12 - 2025
 Напишите регулярное выражение которое для каждой картинки добавит закрывающий слеш в конце:
 
 var text = '<img src="a">   <img src="b" id="c">';
-text = text.replace(/>/g, '\/>');
+text = text.replace(/(<img[^>]*)(>)/g, '$1\/>');
 
 // now text = '<img src="a"/>   <img src="b" id="c"/>'
 alert(text);
