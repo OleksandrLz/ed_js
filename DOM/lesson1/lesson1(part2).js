@@ -3,6 +3,12 @@
 var elements = document.getElementsByTagName('form');
 console.log(elements.length);
 
+/** 
+  Можно еще вот так вот сделать:
+  document.forms.length;
+  https://www.w3schools.com/jsref/coll_doc_forms.asp
+*/
+
 // task4
 
 document.body.style.backgroundColor = 'green';
@@ -21,9 +27,21 @@ colors.push(document.body.style.backgroundColor);
 colors.push(document.body.style.color);
 console.log(colors);
 
+/**
+ Выведите через консоль background цвет body и цвет текста через запятую.
+
+ Шикарно осталось только сделать вот так вот:
+ console.log(colors.join(","));
+*/
+
 // task7
 
 function getAttributes(){  
+ /** это можно вынести в отдельную переменную и потом уже у нее брать все ее свойства:
+ 
+ var link = document.getElementById("w3r");
+ var href = link.href;
+*/
  var href = document.getElementById("w3r").href;  
  console.log('value of href is: '+href);  
  var hreflang = document.getElementById("w3r").hreflang;     
