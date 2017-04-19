@@ -4,10 +4,10 @@
 //То есть, весь вывод должен занимать 2000мс, в течение которых каждые 100мс 
 //в консоли появляется очередное число.
 
-function printNumbersInterval(){
+function printNumbersInterval() {
   var i = 1;
   
-  var timer = setInterval(function(){
+  var timer = setInterval(function() {
     console.log(i);
     if(i == 20){
       clearInterval(timer);
@@ -27,15 +27,15 @@ printNumbersInterval();
     function timer() { 
       setInterval(count, 1000); 
     } 
-    function count(){ 
+    function count() { 
       var element = document.getElementById('number'); 
       element.innerHTML = +element.innerHTML + 1; 
    
 </script> 
 	
 <body>
-    <span id='number'> 0</span> 
-	<br> 
+    <span id='number'> 0 </span> 
+    <br> 
     <button onclick="timer()"> Start timer </button>
 </body>
 	
@@ -47,16 +47,16 @@ printNumbersInterval();
     function timer() { 
       window.timerId = setInterval(count, 1000); 
     } 
-    function count(){ 
+    function count() { 
       var element = document.getElementById('number'); 
       element.innerHTML = +element.innerHTML + 1; 
     } 
-    function stop(){
+    function stop() {
       clearInterval(window.timerId);
     }
 </script> 
 <body>
-    <span id='number'> 0</span> <br> 
+    <span id='number'> 0 </span> <br> 
     <button onclick="timer()"> Start timer </button>
     <button onclick="stop()"> Stop timer </button>
 </body>
@@ -68,7 +68,7 @@ printNumbersInterval();
 	function start() { 
 		window.timerId = window.setInterval(startTime, 1000); 
 	} 
-	function startTime(){
+	function startTime() {
 	    var time = new Date();
 	    var hours =time.getHours();
 	    var min =time.getMinutes();
@@ -81,8 +81,8 @@ printNumbersInterval();
 	    document.getElementById('clock').innerHTML=hours+":"+min+":"+sec;
 	}
 
-	function addNum(i){
-	    if (i<10){
+	function addNum(i) {
+	    if (i<10) {
 		    i="0" + i;
 	    }
 	    return i;
@@ -101,15 +101,15 @@ printNumbersInterval();
     function timer() { 
       window.timerId = setInterval(count, 1000); 
     } 
-    function count(){ 
+    function count() { 
       element = document.getElementById('number'); 
       element.innerHTML = element.innerHTML - 1;
-      if (element.innerHTML == 0){
+      if (element.innerHTML == 0) {
         stop();
       }
           
     } 
-    function stop(){
+    function stop() {
       clearInterval(window.timerId);
     }
         
@@ -131,10 +131,10 @@ printNumbersInterval();
 	<span> секунд </span><span id ="seconds"> 00 </span> 
 </body> 
 <script type="text/javascript"> 
-	function start(){ 
+	function start() { 
 	  var timerId = setInterval(func,1000); 
 	} 
-	function func(){ 
+	function func() { 
 		var time = new Date(); 
 		var night = new Date(time.getFullYear(), time.getMonth(), time.getDate()+1, 0, 0, 0); //next date
 		var diff = night-time; 
@@ -154,12 +154,12 @@ printNumbersInterval();
 	<img src="images/1img.png" id="image" alt="img1"> 
 </body> 
 <script > 
-	function start(){ 
+	function start() { 
 	  var timerId = setInterval(func,4000); 
 	} 
 	var number = 2;
 
-	function func(){ 
+	function func() { 
 	  var task = document.getElementById('image'); 
 
 	  if (number <= 4) { 
@@ -167,7 +167,7 @@ printNumbersInterval();
 		  task.alt = 'img'+number;
 		  number += 1;
 	  } 
-	  else{ 
+	  else { 
 		  number = 1; 
 	  } 
 	} 
