@@ -1,9 +1,9 @@
 // task1
 
 function changeContent(){
-	rowNum = +prompt("Введите номер строки (0-2)", "0");
-	colomnNum = +prompt("Введите номер строки (0,1)","0");
-	content = prompt("Введите новое значение");  
+	var rowNum = +prompt("Введите номер строки (0-2)", "0");
+	var colomnNum = +prompt("Введите номер строки (0,1)","0");
+	var content = prompt("Введите новое значение");  
 	
 	var x = document.getElementById('myTable').rows[rowNum].cells;
 	x[colomnNum].innerHTML = content;
