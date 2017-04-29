@@ -2,17 +2,25 @@
 
 if (!elem.firstChild) {
  узел elem пуст 
+ /** 
+	ну как бы тогда уже тут пишем 
+	return "Empty"; 
+	например 
+*/
 };
 
 // task2
 
-    var table = document.body.children[0];
+	var table = document.body.children[0];
 
-    for (var i = 0; i < table.rows.length; i++) {
-      var row = table.rows[i];
-      row.cells[i].style.backgroundColor = 'red';
-    }
+	for (var i = 0; i < table.rows.length; i++) {
+		var row = table.rows[i];
+		row.cells[i].style.backgroundColor = 'red';
+	}
 // task3
+
+/** и где 3 задание?) */
+
 // task4
 
 function createSpanInBlockByID(blockID) {
@@ -22,6 +30,16 @@ function createSpanInBlockByID(blockID) {
     newElement.innerHTML = 'Привет!';
     elem.appendChild(newElement);
 };
+/** 
+	а как же вот эта вот проверка?
+	P.S. Эта функция должна проверять наличие элемента в этом блоке, 
+			если он уже там есть второй раз она его добавлять не будет! 
+
+	нужно сделать проверку вначале например: 
+	
+	if (elem.querySelector('span').length) { return; }
+
+*/
 createSpanInBlockByID('myBlock');
 
 // task5
@@ -35,13 +53,19 @@ function createCloneNode(block) {
 };
 createCloneNode('div');
 
+/** 
+	тут больше расчитано на то что тебе в функцию передадут уже существующий элемент
+	а ты потом просто сделаешь его копию и запишешь в конец страницы, но впринцыпе ок пусть будет так
+*/
+
 // task6
 
-function addChildrenTo(block, count, type){
- 
+function addChildrenTo(block, count, type) {
+/** давай так учиимся быть универсальным и делать проверку на ошибки та где это возможно даже если в задании не написано, например
+тут проверить как минимум нужно то что count число и что block строка */
   for (var i = 1; i <= count; i++) {
-	
 	   var element = document.createElement('type');
+			/** тут нужно передать переменную type а не строку 'type' */
 	   block.appendChild(element);
   }
 }
@@ -59,7 +83,7 @@ function replaceElBy(blockCurrent, blockToReplace){
 var element = document.getElementById('test');
 element.addEventListener('click', showName);
 
-function showName(){
+function showName() {
 	console.log(this.tagName);
 }
 
@@ -79,6 +103,7 @@ for(var i=0; i < elements.length; i++){
 	addName(elements[i]);
 }
 
+/** тут я ошиблась в задании туманно написано я хотела что бы вы это добавили в название класса */
 function addName(elem){
 	elem.innerHTML += ' '+elem.tagName.toLowerCase();
 }
