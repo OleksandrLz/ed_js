@@ -23,7 +23,7 @@ alert(text);
 
 //task 4
 //Write a pattern that matches e-mail addresses.
-
+/** сам писал просто интересно?) */
 var reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 var str1 = 'aleksandr123@ua.net'; 
 var str2 = 'aleksandr12..3@ua.net'; 
