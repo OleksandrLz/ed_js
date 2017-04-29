@@ -22,7 +22,6 @@ printNumbersInterval();
 // task2
 // Создайте отсчет от 0 до бесконечности.
   
-
 <script type="text/javascript"> 
     function timer() { 
       setInterval(count, 1000); 
@@ -44,6 +43,29 @@ printNumbersInterval();
 	
   
 <script type="text/javascript"> 
+		/** а зачем создавать window.timerId создай переменнную и в нее записуй все */
+	
+		/** 
+			а вообще лучшего все что ты делаешь в script оборачивать в анонимную функцию или делать это на событие DomContentLoaded
+			тогда не будет глобальных переменных и все будет выполняться когда все ресурсы будут загружены
+		
+			тоесть:
+			document.addEventListener('DOMContentLoaded', function () {
+				function timer() { 
+					window.timerId = setInterval(count, 1000); 
+				} 
+				function count() { 
+					var element = document.getElementById('number'); 
+					element.innerHTML = +element.innerHTML + 1; 
+				} 
+				function stop() {
+					clearInterval(window.timerId);
+				}
+			});
+			
+			и добавлсять обработчики событиявсе жу лучше через addEventListener, а не через атрибут inline
+			
+		*/
     function timer() { 
       window.timerId = setInterval(count, 1000); 
     } 
@@ -131,6 +153,7 @@ printNumbersInterval();
 	<span> секунд </span><span id ="seconds"> 00 </span> 
 </body> 
 <script type="text/javascript"> 
+/** что то работает не так у меня ничего не работает просто отображает 0 */
 	function start() { 
 	  var timerId = setInterval(func,1000); 
 	} 
