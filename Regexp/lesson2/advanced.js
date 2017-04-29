@@ -22,15 +22,35 @@ function checkLet(str){
 }  
 checkLet('Script');  
 checkLet('script');
+/**  а еще можно сделать вот так вот чтобы не мачить на все большие буквы ты же понимаешь языков много на все так не проверишь: 
+
+var test = "Test me";
+
+function testIfFirstLetterUpperCase(string) {
+  var firstLetter = string[0];
+  
+  return firstLetter === firstLetter.toUpperCase();
+}
+
+testIfFirstLetterUpperCase(test);
+
+*/
+
 //task2
 //Write a JavaScript program to check a credit card number.
 function isCard(str){  
- reg = /^(?:([0-9]{16}))$/;  
-    if (reg.test(str)){  
-            return true;  
-          } else {  
-            return false;  
-            }  
+/** всегда обьявляй переменный через var !!!) */
+ var reg = /^(?:([0-9]{16}))$/;  
+	
+/**
+    здесь можно просто возвращать твое выражение из функции поскольку они будет либо true либо false
+    return reg.test(str);
+*/
+  if (reg.test(str)){  
+    return true;  
+  } else {  
+    return false;  
+  }  
 }  
   
 console.log(isCard("1234567890123456")); // true 
@@ -62,6 +82,11 @@ console.log(checkIP('11.897.67.456'));   // false
 function checkColor(str){  
 	
  reg = /^#([0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/;  
+	
+/**
+    здесь можно просто возвращать твое выражение из функции поскольку они будет либо true либо false
+    return reg.test(str);
+*/
     if (reg.test(str)){  
             return true;  
           } else {  
@@ -76,6 +101,11 @@ console.log(checkColor("#1234567"));   // false
 //Write a JavaScript function to check whether a given value is Ukraine zip code or not.
 function isZip(str){  
  reg = /^[0-9]{5}$/;  
+	
+/**
+    здесь можно просто возвращать твое выражение из функции поскольку они будет либо true либо false
+    return reg.test(str);
+*/
       if (reg.test(str)){  
             return true;  
           } else {  
@@ -90,7 +120,6 @@ console.log(isZip("Z0123")); // false
 //Write a JavaScript function to print an integer with commas as thousands separators.
 
 function getNumber(num){  
-    
     var n = num.toString().split(".");  
     n[0] = n[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");  
     return n.join(".");  
