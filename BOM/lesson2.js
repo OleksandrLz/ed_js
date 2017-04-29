@@ -12,6 +12,7 @@ window.scrollBy(x,y);
     <iframe src="https://example.com" height="100"></iframe>
   </body>
 	
+/** это можно было бы проще сделать через window.frames */
  var iframe = document.getElementsByTagName('iframe');
  for (var i=0; i < iframe.length; i++){
    console.log(iframe[i]);
@@ -32,6 +33,12 @@ for (var i = 0; i < elems.length; i++){
     elems[i].remove();
   }
 }
+
+/* тут я имела в виду что можно узнать родительский документ у айфрейма через 
+iframe.contentDocument || iframe.contentWindow.document;
+
+и потом уже да удалять все из него кроме айфрейма
+ */
 
 // task4
 
@@ -67,6 +74,11 @@ alert('Ваш браузер: '+browser+', Ваша платформа: '+os);
   <div style='display:none'>Opera</div>
 </body>
 <script>
+/* в этих целях лучше использовать такую проверку 
+http://stackoverflow.com/questions/9847580/how-to-detect-safari-chrome-ie-firefox-and-opera-browser
+
+потому что там есть нюансы хотела бы что бы ты почитал
+ */
 var elements = document.getElementsByTagName('div');
 var br = navigator.appName;
 for (var i=0; i < elements.length; i++){
@@ -85,7 +97,10 @@ if (navigator.cookieEnabled) {
 }
 
 // task10 (for mozilla firefox)
-
+/* 
+тут это нужно сделать было бы для всех 5 популярных браузеров - в зависимости от того в каком браузере сейчас пользователь - смотри
+8 задание и потом проверть версию 
+*/
 var mozilla = navigator.userAgent.split("/").pop();
 var mozLast = "53.0";
 
@@ -98,6 +113,10 @@ if(mozilla < mozLast) {
 var width = document.documentElement.clientWidth;
 var height = document.documentElement.clientHeight;
 
+/* красивей было бы вот так вот
+
+document.body.classList.add( (width < 1366 && height < 800) ? 'little-screen' : 'big-screen');
+ */
 if ((width < 1366) && (height < 800)){
     document.body.classList.add('little-screen');
 } else {
@@ -108,6 +127,6 @@ console.log( document.body.classList.contains("big-screen") );
 
 // task13
 //Выведите в документе информацию пользователю: "Page hostname is " + hostname ( вы тут должны вывести номер порта )
-
+/** название переменной тогда уже лучше сделать port а не hostname */
 var hostname = document.location.port;
 console.log("Page hostname is " + hostname);
